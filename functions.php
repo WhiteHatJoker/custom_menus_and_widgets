@@ -1,17 +1,18 @@
 <?php
 
-// Create a custom menus
+// Function for adding extra custom menus
 function register_my_menus() {
   register_nav_menus(
     array(
-      'header-menu' => __( 'Header Menu' )      
+      'header-menu' => __( 'Header Menu' )
+      //Create extra menus here, but you would still need to call them in template where you would like them to appear
     )
   );
 }
 add_action( 'init', 'register_my_menus' );
 
 
-// Function for creating Widegets
+// Function for creating extra widgets
 function create_widget($name, $id, $description) {
  
     register_sidebar(array(
@@ -26,8 +27,8 @@ function create_widget($name, $id, $description) {
  
 }
  
-// Create the actual widgets
 create_widget("Header", "head", "Displays in the header of the site");
+//Copy the code above and replace the function parameters with new information to created additional widgets for your wordpress
 
 
 ?>
